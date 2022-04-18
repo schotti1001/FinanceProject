@@ -1,0 +1,14 @@
+extends header.pug
+
+block content
+    form(action="/quote", method="post")
+        div(class="form-group")
+            label(for="symbol", class="font-weight-bold") Tickersymbol
+            input(type="text", class="form-control", name="symbol", placeholder="Tickersymbol eingeben")
+        
+        if(result !== undefinded)
+                p(class="font-weight-bold mb-0") Zuletzt abgefragt:          
+                p(class="mb-4") #{result.companyName} (#{result.name}) Kurs: $ #{result.value}
+        
+        
+        button(class="btn btn-primary" type="submit") Kurs abfragen

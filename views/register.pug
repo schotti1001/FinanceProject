@@ -1,0 +1,14 @@
+extends header.pug
+
+block content
+    div(class="col-lg-4 ")
+        h1 Registrieren
+        form(action="/register", method="post")
+            div(class="form-group")
+                label(for="username", class="font-weight-bold") Nutzername
+                input(type="text", class="form-control ", name="username", placeholder="Nutzername")
+            div(class="form-group")
+                label(for="password", class="font-weight-bold") Passwort:
+                input(type="password", class="form-control", name="password", placeholder="Passwort")
+                input(type="password", class="form-control mt-2", name="confirmation", class="form-control", placeholder="Passwort wiederholen")
+            button(class="btn btn-primary" type="submit") Registrieren

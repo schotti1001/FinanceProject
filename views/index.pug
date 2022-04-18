@@ -1,0 +1,29 @@
+extends header.pug
+
+block content 
+    table(class="table table-hover table-striped")
+        thead 
+            th Tickersymbol
+            th Name
+            th Anzahl Aktien 
+            th Preis 
+            th GESAMT
+        each stock in stocks
+            tr
+                td #{stock.symbol}
+                td #{stock.name}
+                td #{stock.count}
+                td $ #{stock.price}
+                td $ #{stock.total}
+        tr 
+            td CASH 
+            td
+            td 
+            td 
+            td $ #{cash}
+        tr 
+            td  
+            td
+            td 
+            td 
+            td(class="font-weight-bold") $ #{total}        

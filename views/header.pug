@@ -1,0 +1,38 @@
+html
+    head
+        meta(charset="UTF-8")
+        title MI Finance
+        link(rel='stylesheet' href='https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css')
+        script(src='https://code.jquery.com/jquery-3.4.1.min.js')
+        script(src='https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js')
+        script(src='js/handler.js')
+
+    body
+        nav(class="navbar navbar-expand-lg navbar-dark bg-dark mb-4")
+            a(class="navbar-brand" href="index") Mi-Finance
+            button(class="navbar-toggler", type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                span(class="navbar-toggler-icon")
+  
+            div(class="collapse navbar-collapse", id='navbarSupportedContent')
+                ul(class="navbar-nav mr-auto")
+                    if user == undefined
+                        li(class="nav-item")
+                            a(class="nav-link", href='/login') Login
+                        li(class="nav-item")
+                            a(class="nav-link", href='/register') Register
+                    else    
+                        li(class="nav-item")
+                            a(class="nav-link", href='/quote') Kursabfrage
+                        li(class="nav-item")
+                            a(class="nav-link", href='/buy') Kaufen 
+                        li(class="nav-item")
+                            a(class="nav-link", href='/sell') Verkaufen 
+                        li(class="nav-item")
+                            a(class="nav-link", href='/history') History 
+                        li(class="nav-item")
+                            a(class="nav-link", href='/logout') Logout    
+
+        div(class="container")
+            div(class="row justify-content-center")
+                block content
+

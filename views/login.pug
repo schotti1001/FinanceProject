@@ -1,0 +1,14 @@
+extends header.pug
+
+block content
+    div(class="col-lg-4 ")
+        h1 Login
+
+        form(action="/login", method="post")
+            div(class="form-group")
+                label(for="name", class="font-weight-bold") Nutzername
+                input(type="text", class="form-control", name="username", placeholder="Nutzername")
+            div(class="form-group")
+                label(for="mail", class="font-weight-bold") Passwort:
+                input(type="password", class="form-control ", name="password", placeholder="Passwort")
+            button(class="btn btn-primary" type="submit") Login

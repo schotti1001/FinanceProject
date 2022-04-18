@@ -1,0 +1,14 @@
+extends header.pug
+
+block content
+    form(action="/sell", method="post")
+        div(class="form-group ")
+            label(for="symbol", class="font-weight-bold") Tickersymbol
+            select(name="symbol" class="custom-select ")
+                each stock in stocks 
+                    option(value=stock) #{stock}
+
+        div(class="form-group ")
+            label(for="shares", class="font-weight-bold") Anzahl Aktien
+            input(type="number", class="form-control ", name="shares", placeholder="Anzahl Aktien")
+        button(class="btn btn-primary" type="submit") Verkaufen
